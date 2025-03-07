@@ -7,7 +7,7 @@ EXPOSE 443
 # Use official .NET SDK as build image
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["Kiemtragk2.csproj", "./"]
+COPY ["Ktrgk2.csproj", "./"]
 RUN dotnet restore "Kiemtragk2.csproj"
 COPY . .
 WORKDIR "/src"
