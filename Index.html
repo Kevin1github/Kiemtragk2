@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Hàng hóa</title>
+</head>
+<body>
+    <h2>Danh sách Hàng hóa</h2>
+    <ul id="goods-list"></ul>
+
+    <h3>Thêm hàng hóa</h3>
+    <input type="text" id="name" placeholder="Tên hàng hóa">
+    <input type="number" id="price" placeholder="Giá">
+    <button onclick="addGoods()">Thêm</button>
+
+    <script>
+        const apiUrl = "https://localhost:7196/HangHoa/api";
+
+        async function loadGoods() {
+            const response = await fetch(apiUrl);
+            const goods = await response.json();
+            const list = document.getElementById("goods-list");
+            list.innerHTML = "";
+            goods.forEach(item => {
+                list.innerHTML += `<li>${item.tenHangHoa} - ${item.soLuong} cái
+            <button onclick="deleteGoods('${item.maHangHoa}')">Xóa</button>
+            <button onclick="updateGhiChu('${item.maHangHoa}')">Cập nhật ghi chú</button>
+        </li>`;
+            });
+        }
+
+        async function addGoods() {
+            const name = document.getElementById("name").value;
+            const price = document.getElementById("price").value;
+            await fetch(apiUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ maHangHoa: Date.now().toString(), tenHangHoa: name, soLuong: parseInt(price) })
+            });
+            loadGoods();
+        }
+
+        async function deleteGoods(id) {
+            await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
+            loadGoods();
+        }
+
+        async function updateGhiChu(id) {
+            const ghiChu = prompt("Nhập ghi chú mới:");
+            await fetch(`${apiUrl}/update-ghi-chu/${id}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(ghiChu)
+            });
+            loadGoods();
+        }
+
+        loadGoods();
+    </script>
+</body>
+</html>

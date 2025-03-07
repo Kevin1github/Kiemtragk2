@@ -1,0 +1,51 @@
+﻿@model List<Ktrgk2.Models.HangHoa>
+
+@{
+    ViewData["Title"] = "Danh sách hàng hóa";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Danh sách hàng hóa</h2>
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Mã hàng hóa</th>
+                    <th>Tên hàng hóa</th>
+                    <th>Số lượng</th>
+                    <th>Ghi chú</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.MaHangHoa</td>
+                        <td>@item.TenHangHoa</td>
+                        <td>@item.SoLuong</td>
+                        <td>@item.GhiChu</td>
+                        <td>
+                            <a href="@Url.Action("Edit", "HangHoa", new { id = item.MaHangHoa })"
+                               class="btn btn-primary btn-sm">
+                                ✏️ Sửa
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

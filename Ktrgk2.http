@@ -1,0 +1,6 @@
+@Ktrgk2_HostAddress = http://localhost:5231
+
+GET {{Ktrgk2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
