@@ -114,3 +114,4 @@ C:\Users\Boss\source\repos\Ktrgk2\obj\Debug\net8.0\ref\Ktrgk2.dll
 C:\Users\Boss\source\repos\Ktrgk2\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Boss\source\repos\Ktrgk2\obj\Debug\net8.0\Ktrgk2.RazorAssemblyInfo.cache
 C:\Users\Boss\source\repos\Ktrgk2\obj\Debug\net8.0\Ktrgk2.RazorAssemblyInfo.cs
+C:\Users\Boss\source\repos\Ktrgk2\obj\Debug\net8.0\Ktrgk2.sourcelink.json

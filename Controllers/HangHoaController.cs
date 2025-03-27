@@ -36,14 +36,17 @@ namespace Ktrgk2.Controllers
             return View(hangHoa);
         }
 
-        // Xử lý cập nhật ghi chú (View)
+        // Xử lý cập nhật hàng hóa (View)
         [HttpPost]
         [Route("Edit/{id}")]
-        public async Task<IActionResult> Edit(string id, string ghiChu)
+        public async Task<IActionResult> Edit(string id, string maHangHoa, string tenHangHoa, int soLuong, string ghiChu)
         {
             var hangHoa = await _context.Goods.FindAsync(id);
             if (hangHoa == null) return NotFound();
 
+            hangHoa.MaHangHoa = maHangHoa;
+            hangHoa.TenHangHoa = tenHangHoa;
+            hangHoa.SoLuong = soLuong;
             hangHoa.GhiChu = ghiChu;
             await _context.SaveChangesAsync();
 

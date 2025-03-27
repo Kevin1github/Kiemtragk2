@@ -169,6 +169,21 @@
         "IsRequired": true
       },
       {
+        "Name": "maHangHoa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tenHangHoa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "soLuong",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "ghiChu",
         "Type": "System.String",
         "IsRequired": false
