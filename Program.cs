@@ -28,8 +28,17 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+<<<<<<< HEAD
 app.UseCors("AllowAll");
 
+=======
+<<<<<<< HEAD
+// Configure the HTTP request pipeline.
+=======
+app.UseCors("AllowAll");
+
+>>>>>>> 33dbfe7 (first commit)
+>>>>>>> 6ee81bf (first commit)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

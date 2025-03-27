@@ -1,5 +1,11 @@
 [
   {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "ContainingType": "Ktrgk.Controllers.WeatherForecastController",
+=======
+>>>>>>> 6ee81bf (first commit)
     "ContainingType": "Ktrgk2.Controllers.HangHoaController",
     "Method": "Index",
     "RelativePath": "HangHoa",
@@ -193,6 +199,10 @@
   },
   {
     "ContainingType": "Ktrgk2.Controllers.WeatherForecastController",
+<<<<<<< HEAD
+=======
+>>>>>>> 33dbfe7 (first commit)
+>>>>>>> 6ee81bf (first commit)
     "Method": "Get",
     "RelativePath": "WeatherForecast",
     "HttpMethod": "GET",
